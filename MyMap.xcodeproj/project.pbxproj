@@ -15,6 +15,7 @@
 		D75C50612BA7BBD00006218B /* DestinationLocationsMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75C50602BA7BBD00006218B /* DestinationLocationsMapView.swift */; };
 		D75C50642BA8F88C0006218B /* TripMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75C50632BA8F88C0006218B /* TripMapView.swift */; };
 		D75C50662BAE19AE0006218B /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D75C50652BAE19AE0006218B /* Launch Screen.storyboard */; };
+		D75C50682BB111FE0006218B /* SampleParisLocations.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75C50672BB111FE0006218B /* SampleParisLocations.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		D75C50602BA7BBD00006218B /* DestinationLocationsMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationLocationsMapView.swift; sourceTree = "<group>"; };
 		D75C50632BA8F88C0006218B /* TripMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripMapView.swift; sourceTree = "<group>"; };
 		D75C50652BAE19AE0006218B /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		D75C50672BB111FE0006218B /* SampleParisLocations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleParisLocations.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				D75C50512BA54FE40006218B /* ContentView.swift */,
 				D75C50532BA54FE70006218B /* Assets.xcassets */,
 				D75C50652BAE19AE0006218B /* Launch Screen.storyboard */,
+				D75C50672BB111FE0006218B /* SampleParisLocations.swift */,
 				D75C50552BA54FE70006218B /* Preview Content */,
 			);
 			path = MyMap;
@@ -170,6 +173,7 @@
 				D75C50642BA8F88C0006218B /* TripMapView.swift in Sources */,
 				D75C50612BA7BBD00006218B /* DestinationLocationsMapView.swift in Sources */,
 				D75C50522BA54FE40006218B /* ContentView.swift in Sources */,
+				D75C50682BB111FE0006218B /* SampleParisLocations.swift in Sources */,
 				D75C50502BA54FE40006218B /* MyMapApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

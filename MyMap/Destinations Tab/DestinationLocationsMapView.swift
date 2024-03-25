@@ -12,14 +12,14 @@ struct DestinationLocationsMapView: View {
     @State private var cameraPosition: MapCameraPosition =  .automatic
     
     var body: some View {
-        Map(position: $cameraPosition)
+        Map(position: $cameraPosition) {
+            Marker("Moulin Rouge", coordinate: .moulinRouge)
+        }
             .onAppear {
-                // 35.689506, 139.691700
-                
-                let tokyo = CLLocationCoordinate2D(latitude: 35.689506, longitude: 139.691700)
-                let tokyoSpan = MKCoordinateSpan(latitudeDelta: 0.25, longitudeDelta: 0.25)
-                let tokyoRegion = MKCoordinateRegion(center: tokyo, span: tokyoSpan)
-                cameraPosition = .region(tokyoRegion)
+                let paris = CLLocationCoordinate2D(latitude: 48.856788, longitude: 2.351077)
+                let parisSpan = MKCoordinateSpan(latitudeDelta: 0.15, longitudeDelta: 0.15)
+                let parisRegion = MKCoordinateRegion(center: paris, span: parisSpan)
+                cameraPosition = .region(parisRegion)
             }
     }
 }
