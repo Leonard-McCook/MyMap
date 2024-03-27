@@ -16,3 +16,4 @@ struct TripMapView: View {
 #Preview {
     TripMapView()
 }
+

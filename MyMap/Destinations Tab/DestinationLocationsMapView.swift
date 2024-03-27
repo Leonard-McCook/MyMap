@@ -25,6 +25,33 @@ struct DestinationLocationsMapView: View {
             
             Marker("Louvre", systemImage: "person.crop.artframe", coordinate: .louvre)
                 .tint(.appBlue)
+            
+            Annotation("Notre Dame", coordinate: .notreDame) {
+                Image(systemName: "star")
+                    .imageScale(.large)
+                    .foregroundStyle(.red)
+                    .padding(10)
+                    .background(.white)
+                    .clipShape(.circle)
+            }
+            
+            Annotation("Sacre Coeur", coordinate: .sacreCoeur, anchor: .center) {
+                Image(.sacreCoeur)
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 40, height: 40)
+            }
+            
+            Annotation("Pantheon", coordinate: .pantheon) {
+                Image(systemName: "mappin")
+                    .imageScale(.large)
+                    .foregroundColor(.red)
+                    .padding(5)
+                    .overlay {
+                        Circle()
+                            .strokeBorder(.red, lineWidth: 2)
+                    }
+            }
         }
         
             .onAppear {
