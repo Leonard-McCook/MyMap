@@ -52,7 +52,11 @@ struct DestinationLocationsMapView: View {
                             .strokeBorder(.red, lineWidth: 2)
                     }
             }
+            MapCircle(
+                center: CLLocationCoordinate2D(latitude: 48.856788, longitude: 2.351077),
+                radius: 5000)
         }
+        .foregroundStyle(.red.opacity(0.4))
         
             .onAppear {
                 let paris = CLLocationCoordinate2D(latitude: 48.856788, longitude: 2.351077)
