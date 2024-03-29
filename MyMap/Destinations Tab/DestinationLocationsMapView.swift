@@ -10,6 +10,7 @@ import MapKit
 
 struct DestinationLocationsMapView: View {
     @State private var cameraPosition: MapCameraPosition =  .automatic
+    @State private var visibleRegion: MKCoordinateRegion?
     
     var body: some View {
         Map(position: $cameraPosition) {
@@ -54,9 +55,15 @@ struct DestinationLocationsMapView: View {
             }
             MapCircle(
                 center: CLLocationCoordinate2D(latitude: 48.856788, longitude: 2.351077),
-                radius: 5000)
+                radius: 5000
+            )
+            .foregroundStyle(.red.opacity(0.4))
         }
-        .foregroundStyle(.red.opacity(0.4))
+        .onMapCameraChange(frequency: .onEnd){ context in
+            visibleRegion = context.region
+        }
+            
+        
         
             .onAppear {
                 let paris = CLLocationCoordinate2D(latitude: 48.856788, longitude: 2.351077)
