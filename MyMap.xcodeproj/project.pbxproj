@@ -18,6 +18,7 @@
 		D75C50682BB111FE0006218B /* SampleParisLocations.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75C50672BB111FE0006218B /* SampleParisLocations.swift */; };
 		D75C506B2BB6FD790006218B /* Destination.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75C506A2BB6FD790006218B /* Destination.swift */; };
 		D75C506D2BBA230A0006218B /* MTPlacemark.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75C506C2BBA230A0006218B /* MTPlacemark.swift */; };
+		D75C50712BBCCBF40006218B /* DestinationsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75C50702BBCCBF40006218B /* DestinationsListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		D75C50672BB111FE0006218B /* SampleParisLocations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleParisLocations.swift; sourceTree = "<group>"; };
 		D75C506A2BB6FD790006218B /* Destination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Destination.swift; sourceTree = "<group>"; };
 		D75C506C2BBA230A0006218B /* MTPlacemark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MTPlacemark.swift; sourceTree = "<group>"; };
+		D75C50702BBCCBF40006218B /* DestinationsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationsListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +93,7 @@
 			isa = PBXGroup;
 			children = (
 				D75C50602BA7BBD00006218B /* DestinationLocationsMapView.swift */,
+				D75C50702BBCCBF40006218B /* DestinationsListView.swift */,
 			);
 			path = "Destinations Tab";
 			sourceTree = "<group>";
@@ -190,6 +193,7 @@
 				D75C50682BB111FE0006218B /* SampleParisLocations.swift in Sources */,
 				D75C506D2BBA230A0006218B /* MTPlacemark.swift in Sources */,
 				D75C50502BA54FE40006218B /* MyMapApp.swift in Sources */,
+				D75C50712BBCCBF40006218B /* DestinationsListView.swift in Sources */,
 				D75C506B2BB6FD790006218B /* Destination.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
