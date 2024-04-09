@@ -12,6 +12,8 @@ import SwiftData
 struct DestinationLocationsMapView: View {
     @State private var cameraPosition: MapCameraPosition = .automatic
     @State private var visibleRegion: MKCoordinateRegion?
+    @State private var searchText = ""
+    @FocusState private var searchFieldFocus: Bool
     var destination: Destination
     var body: some View {
         @Bindable var destination = destination
@@ -46,6 +48,25 @@ struct DestinationLocationsMapView: View {
                 }
                 .tint(.yellow)
             }
+        }
+        .safeAreaInset(edge: .bottom) {
+            HStack {
+                TextField("Search...", text: $searchText)
+                    .textFieldStyle(.roundedBorder)
+                    .focused($searchFieldFocus)
+                    .overlay(alignment: .trailing) {
+                        if searchFieldFocus {
+                            Button {
+                                searchText = ""
+                                searchFieldFocus = false
+                            } label: {
+                                Image(systemName: "xmark.circle.fill")
+                            }
+                            .offset(x: -5)
+                        }
+                    }
+            }
+            .padding()
         }
         .navigationTitle("Destination")
         .navigationBarTitleDisplayMode(.inline)
