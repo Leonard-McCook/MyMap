@@ -10,10 +10,15 @@ import MapKit
 import SwiftData
 
 struct DestinationLocationsMapView: View {
+    @Environment(\.modelContext) private var modelContext
     @State private var cameraPosition: MapCameraPosition = .automatic
     @State private var visibleRegion: MKCoordinateRegion?
     @State private var searchText = ""
     @FocusState private var searchFieldFocus: Bool
+    @Query(filter: #Predicate<MTPlacemark> {$0.destination == nil}) private var searchPlacemarks: [MTPlacemark]
+    private var listPlacemarks: [MTPlacemark] {
+        searchPlacemarks + destination.placemarks
+    }
     var destination: Destination
     var body: some View {
         @Bindable var destination = destination
@@ -42,11 +47,15 @@ struct DestinationLocationsMapView: View {
         }
         .padding(.horizontal)
         Map(position: $cameraPosition) {
-            ForEach(destination.placemarks) { placemark in
-                Marker(coordinate: placemark.coordinate) {
-                    Label(placemark.name, systemImage: "star")
+            ForEach(listPlacemarks) { placemark in
+                if placemark.destination != nil {
+                    Marker(coordinate: placemark.coordinate) {
+                        Label(placemark.name, systemImage: "star")
+                    }
+                    .tint(.yellow)
+                } else {
+                    Marker(placemark.name, coordinate: placemark.coordinate)
                 }
-                .tint(.yellow)
             }
         }
         .safeAreaInset(edge: .bottom) {
@@ -65,6 +74,28 @@ struct DestinationLocationsMapView: View {
                             .offset(x: -5)
                         }
                     }
+                    .onSubmit {
+                        Task {
+                            await MapManager.searchPlaces(
+                                modelContext,
+                                searchText: searchText,
+                                visibleRegion: visibleRegion
+                            )
+                            searchText = ""
+                        }
+                    }
+                if !searchPlacemarks.isEmpty {
+                    Button {
+                        MapManager.removeSearchResults(modelContext)
+                    }label: {
+                        Image(systemName: "mappin.slash.circle.fill")
+                            .imageScale(.large)
+                    }
+                    .foregroundStyle(.white)
+                    .padding(8)
+                    .background(.red)
+                    .clipShape(.circle)
+                }
             }
             .padding()
         }
@@ -74,9 +105,13 @@ struct DestinationLocationsMapView: View {
             visibleRegion = context.region
         }
         .onAppear {
+            MapManager.removeSearchResults(modelContext)
             if let region = destination.region {
                 cameraPosition = .region(region)
             }
+        }
+        .onDisappear {
+            MapManager.removeSearchResults(modelContext)
         }
     }
 }
@@ -88,4 +123,5 @@ struct DestinationLocationsMapView: View {
     return NavigationStack {
         DestinationLocationsMapView(destination: destination)
     }
+    .modelContainer(Destination.preview)
 }
