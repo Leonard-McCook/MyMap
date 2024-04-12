@@ -20,6 +20,8 @@ struct DestinationLocationsMapView: View {
         searchPlacemarks + destination.placemarks
     }
     var destination: Destination
+    
+    @State private var selectedPlacemark: MTPlacemark?
     var body: some View {
         @Bindable var destination = destination
         VStack {
@@ -46,7 +48,7 @@ struct DestinationLocationsMapView: View {
             }
         }
         .padding(.horizontal)
-        Map(position: $cameraPosition) {
+        Map(position: $cameraPosition, selection: $selectedPlacemark) {
             ForEach(listPlacemarks) { placemark in
                 if placemark.destination != nil {
                     Marker(coordinate: placemark.coordinate) {
@@ -62,6 +64,8 @@ struct DestinationLocationsMapView: View {
             HStack {
                 TextField("Search...", text: $searchText)
                     .textFieldStyle(.roundedBorder)
+                    .autocorrectionDisabled()
+                    .textInputAutocapitalization(.never)
                     .focused($searchFieldFocus)
                     .overlay(alignment: .trailing) {
                         if searchFieldFocus {
@@ -82,6 +86,7 @@ struct DestinationLocationsMapView: View {
                                 visibleRegion: visibleRegion
                             )
                             searchText = ""
+                            cameraPosition = .automatic
                         }
                     }
                 if !searchPlacemarks.isEmpty {
