@@ -6,10 +6,11 @@
 //
 
 import SwiftUI
+import MapKit
 
 struct TripMapView: View {
     var body: some View {
-        Text("Trip Map View!")
+        Map()
     }
 }
 
