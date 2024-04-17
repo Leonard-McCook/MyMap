@@ -59,7 +59,7 @@ struct DestinationsListView: View {
                     Image(systemName: "plus.circle.fill")
                 }
                 .alert(
-                    "New Destination",
+                    "Enter Destination Name",
                     isPresented: $newDestination) {
                         TextField("Enter destination name", text: $destinationName)
                             .autocorrectionDisabled()
