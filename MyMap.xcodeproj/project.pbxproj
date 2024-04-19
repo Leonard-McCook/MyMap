@@ -21,6 +21,7 @@
 		D75C50712BBCCBF40006218B /* DestinationsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75C50702BBCCBF40006218B /* DestinationsListView.swift */; };
 		D75C50742BBF75080006218B /* MapManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75C50732BBF75080006218B /* MapManager.swift */; };
 		D75C50772BCADD420006218B /* LocationDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75C50762BCADD420006218B /* LocationDetailView.swift */; };
+		D7BD96792BD1FB6700C2DF80 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7BD96782BD1FB6700C2DF80 /* LocationManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		D75C50702BBCCBF40006218B /* DestinationsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationsListView.swift; sourceTree = "<group>"; };
 		D75C50732BBF75080006218B /* MapManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapManager.swift; sourceTree = "<group>"; };
 		D75C50762BCADD420006218B /* LocationDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailView.swift; sourceTree = "<group>"; };
+		D7BD96782BD1FB6700C2DF80 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				D75C50732BBF75080006218B /* MapManager.swift */,
+				D7BD96782BD1FB6700C2DF80 /* LocationManager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -216,6 +219,7 @@
 				D75C50682BB111FE0006218B /* SampleParisLocations.swift in Sources */,
 				D75C506D2BBA230A0006218B /* MTPlacemark.swift in Sources */,
 				D75C50742BBF75080006218B /* MapManager.swift in Sources */,
+				D7BD96792BD1FB6700C2DF80 /* LocationManager.swift in Sources */,
 				D75C50502BA54FE40006218B /* MyMapApp.swift in Sources */,
 				D75C50712BBCCBF40006218B /* DestinationsListView.swift in Sources */,
 				D75C506B2BB6FD790006218B /* Destination.swift in Sources */,
