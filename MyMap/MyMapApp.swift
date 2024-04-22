@@ -16,7 +16,7 @@ struct MyMapApp: App {
             if locationManager.isAuthorized {
                 StartTab()
             } else {
-//                LocationDeniedView()
+                LocationDeniedView()
             }
         }
         .modelContainer(for: Destination.self)
