@@ -31,8 +31,7 @@ enum MapManager {
     }
     
     static func removeSearchResults(_ modelContext: ModelContext) {
-            let searchPredicate = #Predicate<MTPlacemark> { $0.destination == nil }
-            try? modelContext.delete(model: MTPlacemark.self, where: searchPredicate)
-        }
-    
+        let searchPredicate = #Predicate<MTPlacemark> { $0.destination == nil }
+        try? modelContext.delete(model: MTPlacemark.self, where: searchPredicate)
+    }
 }

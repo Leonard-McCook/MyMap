@@ -23,6 +23,9 @@ struct TripMapView: View {
     
     @State private var selectedPlacemark: MTPlacemark?
     
+    // Route
+    @State private var showRoute = false
+    
     var body: some View {
         Map(position: $cameraPosition, selection: $selectedPlacemark) {
             UserAnnotation()
@@ -40,7 +43,10 @@ struct TripMapView: View {
             }
         }
         .sheet(item: $selectedPlacemark) { selectedPlacemark in
-            LocationDetailView(selectedPlacemark: selectedPlacemark)
+            LocationDetailView(
+                selectedPlacemark: selectedPlacemark,
+                showRoute: $showRoute
+            )
                 .presentationDetents([.height(450)])
         }
         .onMapCameraChange{ context in
