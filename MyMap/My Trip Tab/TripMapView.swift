@@ -25,6 +25,12 @@ struct TripMapView: View {
     
     // Route
     @State private var showRoute = false
+    @State private var routeDisplaying = false
+    @State private var route: MKRoute?
+    @State private var routeDestination: MKMapItem
+    @State private var travelInterval: TimeInterval
+    @State private var transportType = MKDirectionsTransportType.automobile
+    
     
     var body: some View {
         Map(position: $cameraPosition, selection: $selectedPlacemark) {
@@ -118,6 +124,26 @@ struct TripMapView: View {
             withAnimation {
                 cameraPosition = .region(userRegion)
             }
+        }
+    }
+    
+    func fetchRoute() async {
+        if let userLocation = locationManager.userLocation, let selectedPlacemark {
+            let request = MKDirections.Request()
+            let sourcePlacemark = MKPlacemark(coordinate: userLocation.coordinate)
+            let routeSource = MKMapItem(placemark: sourcePlacemark)
+            let destinatinPlacemark = MKPlacemark(coordinate: 
+                selectedPlacemark.coordinate)
+            routeDestination = MKMapItem(placemark: destinatinPlacemark)
+            routeDestination?.name = selectedPlacemark.name
+            request.source = routeSource
+            request.destination?.name = selectedPlacemark.name
+            request.transportType = transportType
+            let directions = MKDirections(request: request)
+            let result = try? await directions.calculate()
+            route = result?routes.first
+            travelInterval.routes.first
+            travelInterval = route?.expectedTravelTime
         }
     }
 }
