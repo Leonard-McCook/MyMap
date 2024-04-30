@@ -14,6 +14,16 @@ struct LocationDetailView: View {
     var destination: Destination?
     var selectedPlacemark: MTPlacemark?
     @Binding var showRoute: Bool
+    @Binding var travelInterval: TimeInterval?
+    @Binding var transportType: MKDirectionsTransportType
+    
+    var travelTime: String? {
+        guard let travelInterval else { return nil }
+        let formatter = DateComponentsFormatter()
+        formatter.unitsStyle = .abbreviated
+        formatter.allowedUnits = [.hour, .minute]
+        return formatter.string(from: travelInterval)
+    }
     
     @State private var name = ""
     @State private var address = ""
@@ -52,6 +62,30 @@ struct LocationDetailView: View {
                             .lineLimit(2)
                             .fixedSize(horizontal: false, vertical: true)
                             .padding(.trailing)
+                    }
+                    if destination == nil {
+                        HStack {
+                            Button {
+                                transportType = .automobile
+                            }label: {
+                                Image(systemName: "car")
+                                    .symbolVariant(transportType == .automobile ? .circle : .none)
+                                    .imageScale(.large)
+                            }
+                            Button {
+                                transportType = .walking
+                            }label: {
+                                Image(systemName: "figure.walk")
+                                    .symbolVariant(transportType == .walking ? .circle : .none)
+                                    .imageScale(.large)
+                            }
+                            if let travelTime {
+                                let prefix = transportType == .automobile ? "Driving" : "Walking"
+                                Text("\(prefix) time: \(travelTime)")
+                                    .font(.caption)
+                                    .foregroundStyle(.secondary)
+                            }
+                        }
                     }
                 }
                 .textFieldStyle(.roundedBorder)
@@ -140,7 +174,9 @@ struct LocationDetailView: View {
     return LocationDetailView(
         destination: destination,
         selectedPlacemark: selectedPlacemark,
-        showRoute: .constant(false)
+        showRoute: .constant(false),
+        travelInterval: .constant(nil),
+        transportType: .constant(.automobile)
     )
 }
 
@@ -151,6 +187,8 @@ struct LocationDetailView: View {
     let selectedPlacemark = placemarks[0]
     return LocationDetailView(
         selectedPlacemark: selectedPlacemark,
-        showRoute: .constant(false)
+        showRoute: .constant(false),
+        travelInterval: .constant(TimeInterval(1000)),
+        transportType: .constant(.automobile)
     )
 }

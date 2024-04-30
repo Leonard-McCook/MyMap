@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		D7134A7D2BD7219300A73CF4 /* LocationDeniedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7134A7C2BD7219300A73CF4 /* LocationDeniedView.swift */; };
 		D75C50502BA54FE40006218B /* MyMapApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75C504F2BA54FE40006218B /* MyMapApp.swift */; };
-		D75C50522BA54FE40006218B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75C50512BA54FE40006218B /* ContentView.swift */; };
 		D75C50542BA54FE70006218B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D75C50532BA54FE70006218B /* Assets.xcassets */; };
 		D75C50572BA54FE70006218B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D75C50562BA54FE70006218B /* Preview Assets.xcassets */; };
 		D75C505E2BA5516B0006218B /* StartTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75C505D2BA5516B0006218B /* StartTab.swift */; };
@@ -29,7 +28,6 @@
 		D7134A7C2BD7219300A73CF4 /* LocationDeniedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDeniedView.swift; sourceTree = "<group>"; };
 		D75C504C2BA54FE40006218B /* MyMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D75C504F2BA54FE40006218B /* MyMapApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMapApp.swift; sourceTree = "<group>"; };
-		D75C50512BA54FE40006218B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		D75C50532BA54FE70006218B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D75C50562BA54FE70006218B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D75C505D2BA5516B0006218B /* StartTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartTab.swift; sourceTree = "<group>"; };
@@ -78,7 +76,6 @@
 				D75C50622BA8F8490006218B /* My Trip Tab */,
 				D75C505F2BA7BB7F0006218B /* Destinations Tab */,
 				D75C504F2BA54FE40006218B /* MyMapApp.swift */,
-				D75C50512BA54FE40006218B /* ContentView.swift */,
 				D75C50752BCADCCB0006218B /* Shared Views */,
 				D75C50692BB6FD5C0006218B /* Models */,
 				D75C50722BBF74C70006218B /* Services */,
@@ -219,7 +216,6 @@
 				D75C50642BA8F88C0006218B /* TripMapView.swift in Sources */,
 				D75C50772BCADD420006218B /* LocationDetailView.swift in Sources */,
 				D75C50612BA7BBD00006218B /* DestinationLocationsMapView.swift in Sources */,
-				D75C50522BA54FE40006218B /* ContentView.swift in Sources */,
 				D75C50682BB111FE0006218B /* SampleParisLocations.swift in Sources */,
 				D75C506D2BBA230A0006218B /* MTPlacemark.swift in Sources */,
 				D75C50742BBF75080006218B /* MapManager.swift in Sources */,
