@@ -23,6 +23,7 @@
 		D75C50772BCADD420006218B /* LocationDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75C50762BCADD420006218B /* LocationDetailView.swift */; };
 		D778A8C62BE56A7700275A19 /* MapStyleConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = D778A8C52BE56A7700275A19 /* MapStyleConfig.swift */; };
 		D7BD96792BD1FB6700C2DF80 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7BD96782BD1FB6700C2DF80 /* LocationManager.swift */; };
+		D7BD96FC2BE9875E00A0E8D2 /* MapStyleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7BD96FB2BE9875E00A0E8D2 /* MapStyleView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,7 @@
 		D75C50762BCADD420006218B /* LocationDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailView.swift; sourceTree = "<group>"; };
 		D778A8C52BE56A7700275A19 /* MapStyleConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapStyleConfig.swift; sourceTree = "<group>"; };
 		D7BD96782BD1FB6700C2DF80 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		D7BD96FB2BE9875E00A0E8D2 /* MapStyleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapStyleView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				D778A8C52BE56A7700275A19 /* MapStyleConfig.swift */,
+				D7BD96FB2BE9875E00A0E8D2 /* MapStyleView.swift */,
 			);
 			path = MapStyle;
 			sourceTree = "<group>";
@@ -233,6 +236,7 @@
 				D75C50742BBF75080006218B /* MapManager.swift in Sources */,
 				D7BD96792BD1FB6700C2DF80 /* LocationManager.swift in Sources */,
 				D75C50502BA54FE40006218B /* MyMapApp.swift in Sources */,
+				D7BD96FC2BE9875E00A0E8D2 /* MapStyleView.swift in Sources */,
 				D75C50712BBCCBF40006218B /* DestinationsListView.swift in Sources */,
 				D75C506B2BB6FD790006218B /* Destination.swift in Sources */,
 			);
